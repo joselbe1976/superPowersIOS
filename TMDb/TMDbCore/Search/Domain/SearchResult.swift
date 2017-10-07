@@ -8,6 +8,7 @@
 
 import Foundation
 
+//enumerado con valores asociados
 enum SearchResult {
 	case movie(Movie)
 	case show(Show)

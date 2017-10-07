@@ -11,6 +11,11 @@ import RxSwift
 /// Presents search results
 final class SearchResultsPresenter {
 
+    private let detailNavigation : DetailNavigator
+    
+    
+    
+    
 	/// The search query
 	let query = Variable("")
 
@@ -24,8 +29,28 @@ final class SearchResultsPresenter {
 		                   releaseDate: Date(timeIntervalSince1970: 1474905532),
 		                   genreIdentifiers: [28, 12, 878]))])
 
+    
+    
+    init( detailNavigation : DetailNavigator) {
+        self.detailNavigation = detailNavigation
+    }
+    
+    
+    
 	/// Called by the view when the user selects a search result
 	func didSelect(searchResult: SearchResult) {
-		// TODO: implement
+        
+        switch searchResult {
+            case .movie(let movie):
+                detailNavigation.shoDetail(withIdentifier: movie.identifier, mediaType: MediaType.movie)
+            case .show(let show):
+                detailNavigation.shoDetail(withIdentifier: show.identifier, mediaType: MediaType.movie)
+            case .person(let person):
+                detailNavigation.shoDetail(withIdentifier: person.identifier, mediaType: MediaType.movie)
+        }
+        
+        
+        
+		
 	}
 }

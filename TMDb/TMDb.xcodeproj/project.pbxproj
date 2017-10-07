@@ -83,6 +83,10 @@
 		99E698491F80F3AC00B4A702 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9995F3881F73BDD0009BA4D7 /* RxSwift.framework */; };
 		99E6984B1F80F49500B4A702 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9995F3861F73BDD0009BA4D7 /* Kingfisher.framework */; };
 		D81C39AA1F8817DB0044A6A0 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C39A91F8817DB0044A6A0 /* AppAssembly.swift */; };
+		D82D7B911F88CB4F0094E9BA /* DetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82D7B901F88CB4F0094E9BA /* DetailNavigator.swift */; };
+		D82D7B931F88CDCB0094E9BA /* PhoneDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82D7B921F88CDCB0094E9BA /* PhoneDetailNavigator.swift */; };
+		D82D7B961F88E4DE0094E9BA /* SearchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82D7B951F88E4DE0094E9BA /* SearchNavigator.swift */; };
+		D82D7B981F88E62B0094E9BA /* PhoneSearchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82D7B971F88E62B0094E9BA /* PhoneSearchNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,6 +221,10 @@
 		99CA33E71F7B9E4700F77335 /* FeaturedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
 		99CA33E81F7B9E4700F77335 /* FeaturedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedViewController.xib; sourceTree = "<group>"; };
 		D81C39A91F8817DB0044A6A0 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		D82D7B901F88CB4F0094E9BA /* DetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigator.swift; sourceTree = "<group>"; };
+		D82D7B921F88CDCB0094E9BA /* PhoneDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDetailNavigator.swift; sourceTree = "<group>"; };
+		D82D7B951F88E4DE0094E9BA /* SearchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigator.swift; sourceTree = "<group>"; };
+		D82D7B971F88E62B0094E9BA /* PhoneSearchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSearchNavigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +326,7 @@
 		996690C01F7A973200AF16B3 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				D82D7B941F88E4B70094E9BA /* Navigators */,
 				997A44241F7AA9780094E928 /* DI */,
 				996690C21F7A989200AF16B3 /* Presentation */,
 				993F1E811F7A9ED3004FE33B /* Domain */,
@@ -457,6 +466,7 @@
 		99A4652A1F7CCF5B007F3B5B /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				D82D7B8F1F88CAF90094E9BA /* Navigators */,
 				998AD7DD1F7FF75900D3A222 /* DI */,
 				992D27B91F7FFD1F00BA79DE /* Domain */,
 				99A4652B1F7CCF66007F3B5B /* Presentation */,
@@ -540,6 +550,24 @@
 				99C5C9141F7B8C5E0038688F /* Core.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		D82D7B8F1F88CAF90094E9BA /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+				D82D7B901F88CB4F0094E9BA /* DetailNavigator.swift */,
+				D82D7B921F88CDCB0094E9BA /* PhoneDetailNavigator.swift */,
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
+		D82D7B941F88E4B70094E9BA /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+				D82D7B951F88E4DE0094E9BA /* SearchNavigator.swift */,
+				D82D7B971F88E62B0094E9BA /* PhoneSearchNavigator.swift */,
+			);
+			path = Navigators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -806,12 +834,14 @@
 				99B9A34A1F74181A004F883E /* Configuration.swift in Sources */,
 				99A4653D1F7CE3B4007F3B5B /* PosterStripView.swift in Sources */,
 				993F1E801F7A9E2E004FE33B /* Person.swift in Sources */,
+				D82D7B931F88CDCB0094E9BA /* PhoneDetailNavigator.swift in Sources */,
 				99C5C91A1F7B92D00038688F /* Genre.swift in Sources */,
 				99CA33E91F7B9E4700F77335 /* FeaturedViewController.swift in Sources */,
 				99A465311F7CD245007F3B5B /* DetailHeaderView.swift in Sources */,
 				997A44201F7AA4110094E928 /* UITableView+Reusable.swift in Sources */,
 				997A442A1F7AABD10094E928 /* ImageLoadingAssembly.swift in Sources */,
 				997A441E1F7AA4110094E928 /* NibLoadableView.swift in Sources */,
+				D82D7B911F88CB4F0094E9BA /* DetailNavigator.swift in Sources */,
 				9943B67F1F7BFF0300D46C90 /* FeaturedPresenter.swift in Sources */,
 				997A44261F7AA9930094E928 /* SearchAssembly.swift in Sources */,
 				998AD7DF1F7FF76800D3A222 /* DetailAssembly.swift in Sources */,
@@ -826,6 +856,8 @@
 				997A44281F7AAB350094E928 /* WebServiceAssembly.swift in Sources */,
 				992D27BB1F7FFD5E00BA79DE /* DetailSection.swift in Sources */,
 				99A4653A1F7CE21C007F3B5B /* PosterStripCell.swift in Sources */,
+				D82D7B961F88E4DE0094E9BA /* SearchNavigator.swift in Sources */,
+				D82D7B981F88E62B0094E9BA /* PhoneSearchNavigator.swift in Sources */,
 				993F1E7C1F7A9C0E004FE33B /* Show.swift in Sources */,
 				99A465351F7CDCAD007F3B5B /* DetailAboutView.swift in Sources */,
 				997A44231F7AA75A0094E928 /* Date+Utilities.swift in Sources */,

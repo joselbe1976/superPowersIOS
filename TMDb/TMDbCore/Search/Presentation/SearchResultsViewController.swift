@@ -9,6 +9,14 @@
 import RxSwift
 import RxCocoa
 
+
+
+
+protocol SearchResultsControllerProvider : class{
+    func searchResultsViewController() -> SearchResultsViewController
+}
+
+
 /// Displays search results
 class SearchResultsViewController: UITableViewController {
 

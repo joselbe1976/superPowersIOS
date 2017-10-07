@@ -10,18 +10,22 @@ import Foundation
 
 final public class FeaturedAssembly {
 	private let imageLoadingAssembly: ImageLoadingAssembly
+    private let detailAssembly : DetailAssembly
+    private let searchAsembly : SearchAssembly
 
-	init(imageLoadingAssembly: ImageLoadingAssembly) {
+	init(imageLoadingAssembly: ImageLoadingAssembly, detailAssembly : DetailAssembly, searchAsembly : SearchAssembly) {
 		self.imageLoadingAssembly = imageLoadingAssembly
+        self.detailAssembly = detailAssembly
+        self.searchAsembly = searchAsembly
 	}
 
 	public func viewController() -> UIViewController {
 		return FeaturedViewController(presenter: presenter(),
-		                              cardPresenter: cardPresenter())
+		                              cardPresenter: cardPresenter(), searchNavigator: searchAsembly.searchNavigation())
 	}
 
 	func presenter() -> FeaturedPresenter {
-		return FeaturedPresenter()
+		return FeaturedPresenter(detailNavigator: self.detailAssembly.DetailNavigator())
 	}
 
 	func cardPresenter() -> CardPresenter {

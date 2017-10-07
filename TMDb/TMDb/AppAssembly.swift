@@ -13,7 +13,7 @@ final class AppAssembly {
     
     private(set) lazy var window = UIWindow(frame: UIScreen.main.bounds)
     private(set) lazy var navcontroller = UINavigationController()
-    private(set) lazy var coreAssembly = CoreAssembly()
+    private(set) lazy var coreAssembly = CoreAssembly(navigationcontroller: navcontroller)
     
     
 }

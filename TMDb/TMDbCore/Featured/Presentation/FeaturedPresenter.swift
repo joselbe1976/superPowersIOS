@@ -9,6 +9,8 @@
 import RxSwift
 
 protocol FeaturedView: class {
+    var title: String? {get set}
+    
 	func setShowsHeaderTitle(_ title: String)
 	func setMoviesHeaderTitle(_ title: String)
 
@@ -17,9 +19,21 @@ protocol FeaturedView: class {
 }
 
 final class FeaturedPresenter {
+    private let detailNavigator : DetailNavigator
+    
+    //Debe ser Debil por tema de referencia circular
 	weak var view: FeaturedView?
+    
+    
+    //inyeccion de dependencias
+    init(detailNavigator : DetailNavigator) {
+        self.detailNavigator = detailNavigator
+    
+    }
 
 	func didLoad() {
+        
+        view?.title = NSLocalizedString("Featured", comment:"")
 		view?.setShowsHeaderTitle(NSLocalizedString("ON TV", comment: ""))
 		view?.setMoviesHeaderTitle(NSLocalizedString("IN THEATERS", comment: ""))
 
@@ -27,11 +41,12 @@ final class FeaturedPresenter {
 	}
 
 	func didSelect(show: Show) {
-		// TODO: implement
+		
+        self.detailNavigator.shoDetail(withIdentifier: show.identifier, mediaType: MediaType.show)
 	}
 
 	func didSelect(movie: Movie) {
-		// TODO: implement
+		self.detailNavigator.shoDetail(withIdentifier: movie.identifier, mediaType: MediaType.movie)
 	}
 }
 
