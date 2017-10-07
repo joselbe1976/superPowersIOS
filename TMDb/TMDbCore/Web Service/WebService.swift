@@ -28,6 +28,7 @@ final internal class WebService {
 	private let session = URLSession(configuration: .default)
 	private let baseURL = URL(string: "https://api.themoviedb.org/3")!
 	private let decoder = JSONDecoder()
+    
 
 	init(configuration: WebServiceConfiguration) {
 		self.configuration = configuration
